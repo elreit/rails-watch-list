@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Emma's movies watch list</a>
+</nav>
+
+<h1> <%= @list.name %> Movie Lists</h1>
+<ul>
+  <% @list.bookmarks.each do |bookmark| %>
+    <%= bookmark.movie.title%>
+    <li class="list-group-item"><%= bookmark.comment %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add a bookmark', new_list_bookmark_path(@list) %>
+
+
+<%= link_to "Go back to lists", lists_path, class: 'btn btn-primary' %>
+
+

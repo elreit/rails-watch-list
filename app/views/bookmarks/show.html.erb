@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Emma's movies watch list</a>
+</nav>
+
+<ul class="list-group">
+  <% @list.bookmarks.each do |bookmark| %>
+    <li class="list-group-item"><%= bookmark.comment %></li>
+  <% end %>
+</ul>
+
+<li class="list-group-item">
+      <%= bookmark.comment %>
+      <%= link_to "Remove",
+                  bookmark_path(bookmark),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    </li>

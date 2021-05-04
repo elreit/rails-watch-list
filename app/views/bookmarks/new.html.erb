@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Emma's movies watch list</a>
+</nav>
+
+
+<%= simple_form_for [ @list, @bookmark ] do |f| %>
+  <%= f.association :movie %>
+  <%= f.input :comment %>
+  <%= f.submit "Submit comment", class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Emma's movies watch list</a>
+</nav>
+
+<h1>Hello! Welcome to your movies database</h1>
+<h3>Choose a movie from the lists you have created:</h3>
+<ul class="list-group">
+  <% @lists.each do |list| %>
+    <%= link_to list.name, list_path(list) %>
+  <% end %>
+</ul>
+
+<%= link_to "Add a list", new_list_path, class: 'btn btn-primary' %>
+

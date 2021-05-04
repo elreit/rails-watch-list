@@ -1,0 +1,9 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Emma's movies watch list</a>
+</nav>
+
+<ul class="list-group">
+  <% @list.bookmarks.each do |bookmark| %>
+    <li class="list-group-item"><%= bookmark.content %></li>
+  <% end %>
+</ul>
