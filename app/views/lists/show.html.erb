@@ -5,14 +5,20 @@
 <h1> <%= @list.name %> Movie Lists</h1>
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
-    <%= bookmark.movie.title%>
-    <li class="list-group-item"><%= bookmark.comment %></li>
+    Movie title: <%= bookmark.movie.title%>
+    <li class="list-group-item"> User's review: <%= bookmark.comment %></li>
+    <li class="list-group-item">
+      <%= link_to "Delete bookmark?",
+                  bookmark_path,
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    </li>
   <% end %>
 </ul>
 
+
+
 <%= link_to 'Add a bookmark', new_list_bookmark_path(@list) %>
-
-
 <%= link_to "Go back to lists", lists_path, class: 'btn btn-primary' %>
 
 
