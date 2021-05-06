@@ -7,6 +7,9 @@
 <ul class="list-group">
   <% @lists.each do |list| %>
     <%= link_to list.name, list_path(list) %>
+    <% if list.photo.attached? %>
+    <%= cl_image_tag(list.photo.key) %>
+    <% end %>
   <% end %>
 </ul>
 
